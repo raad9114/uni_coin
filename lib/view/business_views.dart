@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'coin_details.dart';
+
 class Business_View extends StatefulWidget {
   const Business_View({Key? key}) : super(key: key);
 
@@ -16,7 +18,6 @@ class _Business_ViewState extends State<Business_View> {
       child: Container(
         height: s.height,
         width: s.width,
-
         child: Scaffold(
           appBar: AppBar(
             //backgroundColor: Colors.black,
@@ -59,6 +60,36 @@ class _Business_ViewState extends State<Business_View> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RaisedButton(
+                      color: Colors.white,
+                      padding: EdgeInsets.all(10),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Coin_details()));
+                      },
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Image(
+                                height: 20,
+                                image: AssetImage('images/coin.png')),
+                            Text("  Points"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -486,7 +517,9 @@ class _Business_ViewState extends State<Business_View> {
                               height: 60,
                               image: AssetImage('images/services.png'),
                             ),
-                            SizedBox(height: 9,),
+                            SizedBox(
+                              height: 9,
+                            ),
                             Text(
                               'Services',
                               style: GoogleFonts.roboto(
@@ -505,20 +538,25 @@ class _Business_ViewState extends State<Business_View> {
             ),
           ),
           bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
+              BottomNavigationBar(items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.local_offer,color: Colors.deepOrange,),
+              icon: Icon(
+                Icons.local_offer,
+                color: Colors.deepOrange,
+              ),
               label: 'Offers',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.amp_stories,color: Colors.teal,),
+              icon: Icon(
+                Icons.amp_stories,
+                color: Colors.teal,
+              ),
               label: 'Stories',
             ),
-
           ]),
         ),
       ),
