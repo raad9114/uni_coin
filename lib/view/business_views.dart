@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uni_coin/view/account_details.dart';
+import 'package:uni_coin/view/user_profile.dart';
 
 import 'coin_details.dart';
 
@@ -46,9 +46,12 @@ class _Business_ViewState extends State<Business_View> {
                   IconButton(
                     icon: const Icon(Icons.person),
                     color: Colors.green,
+
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Account_Details()));
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context) => Account_Details()));
+                      print("object");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => User_profile()));
                     },
                   ),
                   SizedBox(
