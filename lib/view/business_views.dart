@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uni_coin/view/account_details.dart';
 
 import 'coin_details.dart';
 
@@ -36,16 +37,19 @@ class _Business_ViewState extends State<Business_View> {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.notifications),
-                    color: Colors.black,
+                    color: Colors.blue,
                     onPressed: () {},
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   IconButton(
-                    icon: const Icon(Icons.menu),
-                    color: Colors.black,
-                    onPressed: () {},
+                    icon: const Icon(Icons.person),
+                    color: Colors.green,
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Account_Details()));
+                    },
                   ),
                   SizedBox(
                     width: 10,
